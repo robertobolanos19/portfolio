@@ -3,36 +3,105 @@
         "id": 1,
         "title": "Project 1",
         "description": "Description for Project 1",
-        "image": "/imgs/project1.png"
+        "image": "/imgs/project1.png",
+        "class": "All"
     },
     {
         "id": 2,
-        "title": "Project 3",
+        "title": "Project 2",
         "description": "Description for Project 2",
-        "image": "/imgs/project1.png"
+        "image": "/imgs/project1.png",
+        "class": "Freelance"
     },
     {
         "id": 3,
         "title": "Project 3",
         "description": "Description for Project 3",
-        "image": "/imgs/project1.png"
+        "image": "/imgs/project1.png",
+        "class": "Product"
     },
     {
         "id": 4,
         "title": "Project 4",
         "description": "Description for Project 4",
-        "image": "/imgs/project1.png"
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
     },
     {
         "id": 5,
         "title": "Project 5",
         "description": "Description for Project 5",
-        "image": "/imgs/project1.png"
+        "image": "/imgs/project1.png",
+        "class": "All"
     },
     {
         "id": 6,
         "title": "Project 6",
         "description": "Description for Project 6",
-        "image": "/imgs/project1.png"
-    }
+        "image": "/imgs/project1.png",
+        "class": "Freelance"
+    },
+    {
+        "id": 7,
+        "title": "Project 7",
+        "description": "Description for Project 7",
+        "image": "/imgs/project1.png",
+        "class": "Product"
+    },
+    {
+        "id": 8,
+        "title": "Project 8",
+        "description": "Description for Project 8",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 9,
+        "title": "Project 9",
+        "description": "Description for Project 9",
+        "image": "/imgs/project1.png",
+        "class": "All"
+    },
+    {
+        "id": 10,
+        "title": "Project 10",
+        "description": "Description for Project 10",
+        "image": "/imgs/project1.png",
+        "class": "Freelance"
+    },
+    {
+        "id": 11,
+        "title": "Project 11",
+        "description": "Description for Project 11",
+        "image": "/imgs/project1.png",
+        "class": "Product"
+    },
+    {
+        "id": 12,
+        "title": "Project 12",
+        "description": "Description for Project 12",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 13,
+        "title": "Project 13",
+        "description": "Description for Project 13",
+        "image": "/imgs/project1.png",
+        "class": "Freelance"
+    },
+    {
+        "id": 14,
+        "title": "Project 14",
+        "description": "Description for Project 14",
+        "image": "/imgs/project1.png",
+        "class": "Product"
+    },
+    {
+        "id": 15,
+        "title": "Project 15",
+        "description": "Description for Project 15",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+}
 ]

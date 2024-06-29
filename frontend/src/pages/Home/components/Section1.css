@@ -1,0 +1,39 @@
+.section1 {
+    height: 574px;
+    display: flex;
+    background-color: #f8b400;
+}
+
+.left-content {
+    width: 45%;
+    background-color: #ddd; /* Example background color */
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    justify-content: flex-end; /* Align items to the bottom */
+    padding: 20px; /* Optional padding */
+    text-align: right; /* Right-align the text */
+    align-items: flex-end; /* Align items to the right */
+}
+
+.left-content h1,
+.left-content h2,
+.left-content p {
+    width: 75%; /* Set width to 75% */
+    margin: 0; /* Remove default margin */
+}
+
+.left-content h1 {
+    margin-bottom: 10px; /* Add space below h1 */
+}
+
+.left-content h2 {
+    margin-bottom: 10px; /* Add space below h2 */
+}
+
+.right-content {
+    width: 55%;
+    background-color: #bbb; /* Example background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

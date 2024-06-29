@@ -1,0 +1,14 @@
+.section3 {
+    padding: 20px;
+    background-color: #6a0572;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex: 1 0 30%; /* Make the card flexible but ensure it takes up about 30% */
+}
