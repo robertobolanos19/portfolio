@@ -103,5 +103,68 @@
         "description": "Description for Project 15",
         "image": "/imgs/project1.png",
         "class": "Exploration"
-}
+    },
+    {
+        "id": 16,
+        "title": "Project 16",
+        "description": "Description for Project 16",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 17,
+        "title": "Project 17",
+        "description": "Description for Project 17",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 18,
+        "title": "Project 18",
+        "description": "Description for Project 18",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 19,
+        "title": "Project 19",
+        "description": "Description for Project 19",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 20,
+        "title": "Project 20",
+        "description": "Description for Project 20",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 21,
+        "title": "Project 21",
+        "description": "Description for Project 21",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 22,
+        "title": "Project 22",
+        "description": "Description for Project 22",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 23,
+        "title": "Project 23",
+        "description": "Description for Project 23",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    },
+    {
+        "id": 24,
+        "title": "Project 24",
+        "description": "Description for Project 24",
+        "image": "/imgs/project1.png",
+        "class": "Exploration"
+    }
 ]

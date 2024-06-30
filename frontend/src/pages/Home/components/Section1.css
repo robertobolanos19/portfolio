@@ -1,39 +1,71 @@
 .section1 {
-    height: 574px;
+    height: 600px;
     display: flex;
     background-color: #f8b400;
+    flex-direction: row;
 }
 
 .left-content {
     width: 45%;
-    background-color: #ddd; /* Example background color */
+    background-color: #ddd;
     display: flex;
-    flex-direction: column; /* Arrange items in a column */
-    justify-content: flex-end; /* Align items to the bottom */
-    padding: 20px; /* Optional padding */
-    text-align: right; /* Right-align the text */
-    align-items: flex-end; /* Align items to the right */
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+    text-align: left;
+    z-index: 1; /* Ensure the left content is in front */
+    position: relative;
 }
 
 .left-content h1,
 .left-content h2,
 .left-content p {
-    width: 75%; /* Set width to 75% */
-    margin: 0; /* Remove default margin */
+    width: 75%;
+    margin: 0;
 }
 
 .left-content h1 {
-    margin-bottom: 10px; /* Add space below h1 */
+    margin-bottom: 10px;
 }
 
 .left-content h2 {
-    margin-bottom: 10px; /* Add space below h2 */
+    margin-bottom: 10px;
 }
 
 .right-content {
     width: 55%;
-    background-color: #bbb; /* Example background color */
+    background-color: #bbb;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 0; /* Ensure the right content is behind */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .section1 {
+        flex-direction: column;
+        position: relative;
+        height: 600px; /* Set the height to 600px */
+    }
+
+    .right-content {
+        width: 100%;
+        height: 100%; /* Ensure it takes half of the container height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-content {
+        width: 100%;
+        position: absolute; /* Position the left content in front of the right content */
+        bottom: 0;
+        left: 0;
+        height: 50%; /* Ensure it takes half of the container height */
+        background-color: rgba(221, 221, 221, 0.9); /* Add some transparency if needed */
+    }
 }

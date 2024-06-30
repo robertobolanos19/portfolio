@@ -3,7 +3,7 @@ import axios from 'axios';
 import Card from './Card';
 import './Section3.css';
 
-function Section3({ activeFilter }) {
+function Section3({ activeFilter, showAll }) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -24,11 +24,11 @@ function Section3({ activeFilter }) {
     // Filter data based on the active filter
     const filteredData = data.filter(item => activeFilter === 'All' || item.class === activeFilter);
 
-    // Limit to a maximum of 9 cards
-    const limitedData = filteredData.slice(0, 9);
+    // Determine the data to display based on showAll
+    const dataToDisplay = showAll ? filteredData : filteredData.slice(0, 6);
 
     // Chunk data into rows of 3 and filter out incomplete rows
-    const rows = chunkArray(limitedData, 3).filter(row => row.length === 3);
+    const rows = chunkArray(dataToDisplay, 3).filter(row => row.length === 3);
 
     return (
         <section className="section section3">

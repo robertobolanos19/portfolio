@@ -1,14 +1,64 @@
 .section3 {
     padding: 20px;
     background-color: #6a0572;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .row {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+    width: 100%;
+    flex-wrap: wrap; /* Allow wrapping for better responsiveness */
 }
 
 .card {
-    flex: 1 0 30%; /* Make the card flexible but ensure it takes up about 30% */
+    flex: 1 0 30%;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 16px 0 8px;
+}
+
+.card p {
+    margin: 0;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .section3{
+        background-color: aqua;
+    }
+
+    .card {
+        flex: 1 0 45%; /* Adjust to 45% for rows of 2 cards */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 646px) {
+    .section3{
+        background-color: aqua;
+    }
+
+    .card {
+        width: 50%;
+        flex: 1 0 55%; /* Adjust to 45% for rows of 2 cards */
+    }
+}
+
