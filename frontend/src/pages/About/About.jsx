@@ -43,8 +43,8 @@ const About = () => {
                 <h1>Let's work together!</h1>
                 <p>roberto_bolanos@icloud.com</p>
                 <div className="socials">
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com/in/roberto-bolanos-021a6a242/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.instagram.com/inexplicable_creations/" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </div>
             </div>
         </div>
