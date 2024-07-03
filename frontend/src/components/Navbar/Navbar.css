@@ -1,27 +1,48 @@
 .navbar {
-    background-color: transparent;
-    margin-top: 20px;
-    padding: 10px;
+    padding: 10px 8% 20px 0; /* Adjust padding */
     width: 100%; /* Full width */
+    position: fixed; /* Fix to the top */
+    top: 0; /* Position it at the top */
+    left: 0; /* Position it at the left */
+    z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
 .navbar ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end; /* Align items to the right */
     margin: 0;
     padding: 0;
 }
 
 .navbar li {
-    margin: 0 10px;
+    margin: 0 20px; /* Adjust margin for spacing */
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
+    font-size: 1.1em; /* Slightly larger font */
+    font-weight: 600; /* Make it bolder */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .navbar a:hover {
-    text-decoration: underline;
+    color: gray; /* Change color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .navbar{
+        width: 100%;
+        padding: 25px 0;
+    }
+    .navbar ul {
+        justify-content: center; /* Center items on mobile */
+    }
+
+    .navbar li {
+        margin: 0 10px; /* Reduce margin on mobile */
+    }
 }

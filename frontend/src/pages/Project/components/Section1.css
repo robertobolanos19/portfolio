@@ -5,14 +5,14 @@
     padding: 0;
 }
 
-.image-container {
+.images {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
 
-.image-wrapper {
+.images.image-wrapper {
     flex: 1 1 30%;
     max-width: 30%;
 }

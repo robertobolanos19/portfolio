@@ -65,7 +65,7 @@
     .left-content {
         width: 100%;
         position: absolute; /* Position the left content in front of the right content */
-        top:160px;
+        top:60px;
         align-items: flex-start;
         height: 50%; /* Ensure it takes half of the container height */
         background-color: transparent; /* Add some transparency if needed */

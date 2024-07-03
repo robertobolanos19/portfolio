@@ -22,12 +22,12 @@ const Home = ({ projects }) => {
     const homeInfo = {
         "title": "Inexplicable",
         "subTitle": "Creations",
-        "description": "Unlock the inexplicable fusion of art and technology with cutting-edge 3D modeling and programming. Explore a world where imagination meets innovation, creating solutions that defy explanation."
+        "description": "Unlock the inexplicable fusion of art and technology with cutting-edge 3D modeling and programming."
     }
     return (
         <div>
             <Navbar/>
-            <Model modelPath={'/dummyModels/test2.glb'} info={homeInfo}/>
+            <Model modelPath={'/models/test.glb'} info={homeInfo}/>
             <Section2 setActiveFilter={handleSetActiveFilter} />
             <Section3 data={projects} activeFilter={activeFilter} showAll={showAll} />
             <Section4 showAll={showAll} toggleShowAll={toggleShowAll} />

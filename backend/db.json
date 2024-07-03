@@ -4,6 +4,7 @@
         "title": "Project 1",
         "description": "Description for Project 1",
         "image": "/imgs/project1.png",
+        "model": "/models/test.glb",
         "class": "All",
         "year": "2020",
         "software": "Blender"
