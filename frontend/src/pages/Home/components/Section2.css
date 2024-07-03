@@ -1,9 +1,11 @@
 .section2 {
+    width: 50%;
+    margin: auto;
     height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #f85f40;
+    background-color: transparent;
     padding: 10px 20px; /* Add some padding for better spacing */
     flex-wrap: wrap; /* Allow wrapping for better responsiveness */
 }
@@ -24,4 +26,21 @@
 
 .section2 button:hover {
     background-color: #ccc;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 646px) {
+    .section2{
+        width: 100%;
+    }
+
+    .section2 button {
+        background-color: #fff;
+        border: none;
+        padding: 10px 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 5px; /* Add margin for better spacing between buttons */
+    }
 }

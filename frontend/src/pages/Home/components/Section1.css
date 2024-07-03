@@ -1,13 +1,16 @@
 .section1 {
     height: 600px;
     display: flex;
-    background-color: #f8b400;
+    background-color: transparent;
     flex-direction: row;
+    color: white;
+    background-color: aqua;
 }
 
 .left-content {
     width: 45%;
-    background-color: #ddd;
+    height: 85%;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -35,7 +38,7 @@
 
 .right-content {
     width: 55%;
-    background-color: #bbb;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,9 +66,8 @@
     .left-content {
         width: 100%;
         position: absolute; /* Position the left content in front of the right content */
-        bottom: 0;
-        left: 0;
+        align-items: flex-start;
         height: 50%; /* Ensure it takes half of the container height */
-        background-color: rgba(221, 221, 221, 0.9); /* Add some transparency if needed */
+        background-color: red; /* Add some transparency if needed */
     }
 }

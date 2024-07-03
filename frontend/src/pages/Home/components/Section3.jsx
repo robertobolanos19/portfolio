@@ -1,46 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Card from './Card';
+import React from 'react';
 import './Section3.css';
+import { Link } from 'react-router-dom';
 
-function Section3({ activeFilter, showAll }) {
-    const [data, setData] = useState([]);
+const Section3 = ({ data, viewMore }) => {
+    const maxCards = viewMore ? data.length : 6;
 
-    useEffect(() => {
-        axios.get('http://localhost:3000/projects')
-            .then(response => setData(response.data))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
-
-    // Function to chunk array into smaller arrays of a specific size
-    const chunkArray = (array, size) => {
-        const chunks = [];
-        for (let i = 0; i < array.length; i += size) {
-            chunks.push(array.slice(i, i + size));
-        }
+    const chunkArray = (arr, size) => {
+        const numChunks = Math.ceil(arr.length / size);
+        const chunks = Array.from({ length: numChunks }, (_, index) => {
+            const start = index * size;
+            return arr.slice(start, start + size);
+        });
         return chunks;
     };
 
-    // Filter data based on the active filter
-    const filteredData = data.filter(item => activeFilter === 'All' || item.class === activeFilter);
-
-    // Determine the data to display based on showAll
-    const dataToDisplay = showAll ? filteredData : filteredData.slice(0, 6);
-
-    // Chunk data into rows of 3 and filter out incomplete rows
-    const rows = chunkArray(dataToDisplay, 3).filter(row => row.length === 3);
+    const rows = chunkArray(data.slice(0, maxCards), 3);
 
     return (
-        <section className="section section3">
-            {rows.map((row, rowIndex) => (
-                <div className="row" key={rowIndex}>
-                    {row.map(item => (
-                        <Card key={item.id} {...item} />
-                    ))}
-                </div>
-            ))}
+        <section className="section3">
+            <div className="section3Container">
+                {rows.map((row, rowIndex) => (
+                    <div className="row" key={rowIndex}>
+                        {row.map((item, index) => (
+                            <Link to={`/project/${item.id}`} className="card-link" key={index}>
+                                <div className="card">
+                                    <div className="image">
+                                        <img src={item.image} alt={item.title} />
+                                    </div>
+                                    <div className="content">
+                                        <h2>{item.title}</h2>
+                                        <p>{item.description}</p>
+                                        <div className="year">{item.year}</div>
+                                        <div className="software">{item.software}</div>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                ))}
+            </div>
         </section>
     );
-}
+};
 
 export default Section3;

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Section1 from './components/Section1';
-import Section2 from './components/Section2';
-import Section3 from './components/Section3';
-import Section4 from './components/Section4';
-import './Home.css';
+import Model from '../../components/Model/Model';
+import Navbar from '../../components/Navbar/Navbar'
 
-function Home() {
+import Section2 from '../Home/components/Section2';
+import Section3 from '../Home/components/Section3';
+import Section4 from '../Home/components/Section4';
+
+const Home = ({ projects }) => {
     const [activeFilter, setActiveFilter] = useState('All');
     const [showAll, setShowAll] = useState(false);
 
@@ -18,14 +19,20 @@ function Home() {
         setShowAll(false); // Reset showAll when filter changes
     };
 
+    const homeInfo = {
+        "title": "Inexplicable",
+        "subTitle": "Creations",
+        "description": "Unlock the inexplicable fusion of art and technology with cutting-edge 3D modeling and programming. Explore a world where imagination meets innovation, creating solutions that defy explanation."
+    }
     return (
-        <div className="home">
-            <Section1 />
+        <div>
+            <Navbar/>
+            <Model modelPath={'/dummyModels/test2.glb'} info={homeInfo}/>
             <Section2 setActiveFilter={handleSetActiveFilter} />
-            <Section3 activeFilter={activeFilter} showAll={showAll} />
+            <Section3 data={projects} activeFilter={activeFilter} showAll={showAll} />
             <Section4 showAll={showAll} toggleShowAll={toggleShowAll} />
         </div>
     );
-}
+};
 
 export default Home;

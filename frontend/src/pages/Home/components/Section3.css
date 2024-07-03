@@ -1,6 +1,10 @@
 .section3 {
+    width: 80%;
+    margin: auto;
     padding: 20px;
-    background-color: #6a0572;
+}
+
+.section3Container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,57 +12,71 @@
 
 .row {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
     width: 100%;
-    flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card-link {
+    text-decoration: none;
+    width: 30%;
+    color: inherit;
 }
 
 .card {
-    flex: 1 0 30%;
-    margin: 10px;
-    border: 1px solid #ccc;
+    background-color: black;
+    color: white;
     border-radius: 8px;
-    padding: 16px;
-    text-align: center;
-    background-color: #fff;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    overflow: hidden;
 }
 
-.card img {
-    max-width: 100%;
+.card:hover {
+    transform: scale(1.05);
+}
+
+.image img {
+    width: 100%;
     height: auto;
-    border-radius: 8px;
 }
 
-.card h3 {
-    margin: 16px 0 8px;
+.content {
+    padding: 15px;
+    text-align: left;
 }
 
-.card p {
+.content h2 {
     margin: 0;
+    font-size: 1.5em;
+    color: white;
 }
 
-/* Media query for mobile devices */
+.content p {
+    margin: 10px 0;
+    color: white;
+}
+
+.content .year,
+.content .software {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Media query for responsive design */
 @media (max-width: 600px) {
-    .section3{
-        background-color: aqua;
+
+    .section3 {
+        width: 100%;
     }
 
-    .card {
-        flex: 1 0 45%; /* Adjust to 45% for rows of 2 cards */
-    }
-}
-
-/* Media query for mobile devices */
-@media (max-width: 646px) {
-    .section3{
-        background-color: aqua;
+    .row {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .card {
-        width: 50%;
-        flex: 1 0 55%; /* Adjust to 45% for rows of 2 cards */
+    .card-link {
+        width: 80%;
+        margin-bottom: 20px;
     }
 }
-

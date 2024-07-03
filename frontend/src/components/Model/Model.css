@@ -1,0 +1,73 @@
+.modelSection {
+    height: 600px;
+    display: flex;
+    background-color: transparent;
+    flex-direction: row;
+    color: white;
+}
+
+.left-content {
+    width: 45%;
+    height: 85%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+    text-align: left;
+    z-index: 1; /* Ensure the left content is in front */
+    position: relative;
+}
+
+.left-content h1,
+.left-content h2,
+.left-content p {
+    width: 75%;
+    margin: 0;
+}
+
+.left-content h1 {
+    margin-bottom: 10px;
+}
+
+.left-content h2 {
+    margin-bottom: 10px;
+}
+
+.right-content {
+    width: 55%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 0; /* Ensure the right content is behind */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .section1 {
+        flex-direction: column;
+        position: relative;
+        height: 600px; /* Set the height to 600px */
+    }
+
+    .right-content {
+        width: 100%;
+        height: 100%; /* Ensure it takes half of the container height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-content {
+        width: 100%;
+        position: absolute; /* Position the left content in front of the right content */
+        top:160px;
+        align-items: flex-start;
+        height: 50%; /* Ensure it takes half of the container height */
+        background-color: transparent; /* Add some transparency if needed */
+    }
+}

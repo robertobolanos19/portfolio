@@ -1,21 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import './index.css'; // Import global styles
+import About from './pages/About/About';
+import ProjectPage from './pages/Project/ProjectPage';
+import axios from 'axios';
 
-function App() {
+const App = () => {
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/projects')
+            .then(response => setProjects(response.data))
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+
     return (
         <Router>
-            <Navbar />
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                {/* Placeholders for future pages */}
-                <Route path="/about" element={<div>About Page</div>} />
-                <Route path="/contact" element={<div>Contact Page</div>} />
+                <Route path="/" element={<Home projects={projects} />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/project/:id" element={<ProjectPage projects={projects} />} />
             </Routes>
         </Router>
     );
-}
+};
 
 export default App;

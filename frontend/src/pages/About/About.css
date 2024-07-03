@@ -1,0 +1,119 @@
+.about-page {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh; /* Ensure the page takes at least the full viewport height */
+    background-image: url('/imgs/blocks.png'), url('/imgs/blocks.png'); 
+    background-position: left top, right top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 50%, 50%;
+}
+
+.image-container {
+    margin: 20px auto;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.description h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.responsive-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.responsive-div {
+    width: 30%;
+}
+
+.responsive-div h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    border-bottom: 1px white solid;
+}
+
+.responsive-div ul {
+    list-style: none;
+    padding: 0;
+}
+
+.responsive-div ul li {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.contact {
+    margin-top: 40px;
+}
+
+.contact h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-size: 1.2em;
+}
+
+.socials {
+    margin-top: 10px;
+}
+
+.socials a {
+    color: cadetblue;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+}
+
+.socials a:hover {
+    color: palevioletred;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .about-page {
+        background-image: url('/imgs/blocks.png'); /* Only one image for mobile */
+        background-position: center top;
+        background-size: cover;
+    }
+
+    .responsive-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .responsive-div {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}

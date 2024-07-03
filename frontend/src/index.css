@@ -8,10 +8,10 @@
 /* Ensure the body takes the full viewport height */
 html, body, #root {
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
-  background-color: aqua;
+  background-color: black;
 }
 
 /* General styles */

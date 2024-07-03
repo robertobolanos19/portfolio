@@ -1,5 +1,6 @@
 .navbar {
-    background-color: green;
+    background-color: transparent;
+    margin-top: 20px;
     padding: 10px;
     width: 100%; /* Full width */
 }

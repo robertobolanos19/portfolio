@@ -1,0 +1,33 @@
+.section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-wrapper {
+    flex: 1 1 30%;
+    max-width: 30%;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+    .image-wrapper {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
