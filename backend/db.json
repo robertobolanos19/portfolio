@@ -1,19 +1,19 @@
 [
     {
         "id": 1,
-        "title": "Project 1",
-        "description": "Description for Project 1",
-        "image": "/imgs/project1.png",
+        "title": "Alien Scanner",
+        "description": "The Alien handheld scanner, or motion tracker, is a fictional device used by the crew to detect the movement of the alien creature. It is a pivotal tool in their attempts to locate and avoid the lethal xenomorph as it stalks them through the spaceship.",
+        "image": ["/imgs/alienScanner/2.png","/imgs/alienScanner/1.png","/imgs/alienScanner/3.png"],
         "model": "/models/test.glb",
-        "class": "All",
+        "class": "Exploration",
         "year": "2020",
         "software": "Blender"
     },
     {
         "id": 2,
-        "title": "Project 2",
+        "title": "Slave I",
         "description": "Description for Project 2",
-        "image": "/imgs/project1.png",
+        "image": ["/imgs/slaveOne/3.png","/imgs/slaveOne/2.png","/imgs/slaveOne//3.png"],
         "class": "Freelance",
         "year": "2021",
         "software": "Photoshop"
@@ -22,7 +22,63 @@
         "id": 3,
         "title": "Project 2",
         "description": "Description for Project 2",
-        "image": "/imgs/project1.png",
+        "image": ["/imgs/redBarron/2.png","/imgs/slaveOne/1.png","/imgs/slaveOne//3.png"],
+        "class": "Freelance",
+        "year": "2021",
+        "software": "Photoshop"
+    },
+    {
+        "id": 4,
+        "title": "Project 1",
+        "description": "Description for Project 1",
+        "image": ["/imgs/alienScanner/2.png","/imgs/alienScanner/1.png","/imgs/alienScanner/3.png"],
+        "model": "/models/test.glb",
+        "class": "Exploration",
+        "year": "2020",
+        "software": "Blender"
+    },
+    {
+        "id": 2,
+        "title": "Project 2",
+        "description": "Description for Project 2",
+        "image": ["/imgs/slaveOne/3.png","/imgs/slaveOne/2.png","/imgs/slaveOne//3.png"],
+        "class": "Freelance",
+        "year": "2021",
+        "software": "Photoshop"
+    },
+    {
+        "id": 3,
+        "title": "Project 2",
+        "description": "Description for Project 2",
+        "image": ["/imgs/redBarron/2.png","/imgs/slaveOne/1.png","/imgs/slaveOne//3.png"],
+        "class": "Freelance",
+        "year": "2021",
+        "software": "Photoshop"
+    },
+    {
+        "id": 1,
+        "title": "Project 1",
+        "description": "Description for Project 1",
+        "image": ["/imgs/alienScanner/2.png","/imgs/alienScanner/1.png","/imgs/alienScanner/3.png"],
+        "model": "/models/test.glb",
+        "class": "Exploration",
+        "year": "2020",
+        "software": "Blender"
+    },
+    {
+        "id": 2,
+        "title": "Project 2",
+        "description": "Description for Project 2",
+        "image": ["/imgs/slaveOne/3.png","/imgs/slaveOne/2.png","/imgs/slaveOne//3.png"],
+        "class": "Freelance",
+        "year": "2021",
+        "software": "Photoshop"
+    },
+    {
+        "id": 3,
+        "title": "Project 2",
+        "description": "Description for Project 2",
+        "image": ["/imgs/redBarron/2.png","/imgs/slaveOne/1.png","/imgs/slaveOne//3.png"],
         "class": "Freelance",
         "year": "2021",
         "software": "Photoshop"
