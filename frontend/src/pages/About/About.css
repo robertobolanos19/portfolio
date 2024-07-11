@@ -10,7 +10,7 @@
     background-image: url('/imgs/blocks.png'), url('/imgs/blocks.png'); 
     background-position: left top, right top;
     background-repeat: no-repeat, no-repeat;
-    background-size: 50%, 50%;
+    background-size: 40%, 40%;
 }
 
 .image-container {

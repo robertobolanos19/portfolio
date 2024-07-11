@@ -26,3 +26,27 @@ const App = () => {
 };
 
 export default App;
+
+
+/*
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {  Routes, Route, HashRouter } from "react-router-dom"; /* BrowserRouter, /
+import './index.scss';
+import App from './App';
+import Home from './pages/Home/Home';
+import NoPage from './pages/NoPage/NoPage';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <HashRouter>
+    <Routes>
+      <Route path="/" element={<App />}>
+        <Route index element={<Home />} />
+        <Route path="" element={<NoPage />} />
+      </Route>
+    </Routes>
+  </HashRouter>
+);
+*/

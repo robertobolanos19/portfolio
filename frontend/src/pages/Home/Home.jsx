@@ -32,7 +32,7 @@ const Home = ({ projects }) => {
     return (
         <div>
             <Navbar />
-            <Model modelPath={'/models/test.glb'} info={homeInfo} />
+            <Model modelPath={'/models/gundam.glb'} info={homeInfo} />
             <Section2 setActiveFilter={handleSetActiveFilter} />
             <Section3 data={filteredProjects} showAll={showAll} />
             <Section4 showAll={showAll} toggleShowAll={toggleShowAll} />
