@@ -9,10 +9,11 @@ const App = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/projects')
-            .then(response => setProjects(response.data))
-            .catch(error => console.error('Error fetching data:', error));
+      axios.get('https://portfolio-di71.onrender.com/projects') // Ensure this URL matches your Render URL
+          .then(response => setProjects(response.data))
+          .catch(error => console.error('Error fetching data:', error));
     }, []);
+  
 
     return (
         <Router>
