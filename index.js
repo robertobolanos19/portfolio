@@ -27,7 +27,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Enable CORS for all routes
-app.use(cors({ origin: 'http://yourdomain.com' })); // Update this to your frontend URL if different
+app.use(cors({ origin: 'http://inexplicablejourney.com/' })); // Update this to your frontend URL if different
 
 // Serve static files from the 'imgs' directory
 app.use('/imgs', express.static('imgs')); // Adjust the directory name as needed

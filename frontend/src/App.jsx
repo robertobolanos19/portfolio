@@ -9,7 +9,7 @@ const App = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-      axios.get('https://portfolio-di71.onrender.com/projects') // Ensure this URL matches your Render URL
+      axios.get('https://portfolio-5-l1i7.onrender.com/projects') // Ensure this URL matches your Render URL
           .then(response => setProjects(response.data))
           .catch(error => console.error('Error fetching data:', error));
     }, []);
