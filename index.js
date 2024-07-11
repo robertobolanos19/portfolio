@@ -29,7 +29,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Enable CORS for all routes
-app.use(cors({ origin: 'http://yourdomain.com' })); // Replace with your frontend domain
+app.use(cors({ origin: 'http://inexplicablejourney.com' })); // Replace with your actual frontend domain
 
 // Serve static files from the 'imgs' directory
 app.use('/imgs', express.static('imgs')); // Adjust the directory name as needed
@@ -47,3 +47,4 @@ app.get('/projects', async (req, res) => {
 app.listen(port, () => {
     console.log(`Backend server is running at http://localhost:${port}`);
 });
+
