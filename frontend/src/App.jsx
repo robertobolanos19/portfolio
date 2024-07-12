@@ -6,24 +6,23 @@ import ProjectPage from './pages/Project/ProjectPage';
 import axios from 'axios';
 
 const App = () => {
-    const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
-      axios.get('https://portfolio-5-l1i7.onrender.com/projects') // Ensure this URL matches your Render URL
-          .then(response => setProjects(response.data))
-          .catch(error => console.error('Error fetching data:', error));
-    }, []);
-  
+  useEffect(() => {
+    axios.get('https://portfolio-11-8t3r.onrender.com/projects') // Ensure this URL matches your Render URL
+      .then(response => setProjects(response.data))
+      .catch(error => console.error('Error fetching data:', error.response ? error.response.data : error.message));
+  }, []);
 
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home projects={projects} />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/project/:id" element={<ProjectPage projects={projects} />} />
-            </Routes>
-        </Router>
-    );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home projects={projects} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/project/:id" element={<ProjectPage projects={projects} />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;

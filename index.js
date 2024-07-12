@@ -20,7 +20,6 @@ async function initializeApp() {
   const app = express();
   const port = process.env.PORT || 3000;
 
-  // Use CORS middleware
   app.use(cors({ origin: 'http://inexplicablejourney.com' }));
 
   const Project = require('./models/Project');
@@ -30,15 +29,15 @@ async function initializeApp() {
       const projects = await Project.find();
       res.json(projects);
     } catch (err) {
+      console.error('Error fetching projects:', err);
       res.status(500).send('Error fetching projects');
     }
   });
 
   app.get('/file/:filename', (req, res) => {
     bucket.find({ filename: req.params.filename }).toArray((err, files) => {
-      if (!files || files.length === 0) {
-        return res.status(404).json({ err: 'No file exists' });
-      }
+      if (files.length === 0) return res.status(404).json({ err: 'No file exists' });
+
       const readstream = bucket.openDownloadStreamByName(req.params.filename);
       readstream.pipe(res);
     });
