@@ -22,10 +22,14 @@ const Section3 = ({ data, showAll }) => {
                 {rows.map((row, rowIndex) => (
                     <div className="row" key={rowIndex}>
                         {row.map((item, index) => (
-                            <Link to={`/project/${item.id}`} className="card-link" key={index}>
+                            <Link to={`/project/${item._id}`} className="card-link" key={index}>
                                 <div className="card">
                                     <div className="image">
-                                        <img src={item.image[0]} alt={item.title} />
+                                        {item.image && item.image.length > 0 ? (
+                                            <img src={item.image[0]} alt={item.title} />
+                                        ) : (
+                                            <p>No image available</p>
+                                        )}
                                     </div>
                                     <div className="content">
                                         <h2>{item.title}</h2>

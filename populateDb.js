@@ -1,4 +1,14 @@
-[
+const mongoose = require('mongoose');
+const Project = require('./models/Project');
+require('dotenv').config();
+
+const mongoUri = process.env.MONGODB_URI;
+
+mongoose.connect(mongoUri)
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Could not connect to MongoDB...', err));
+
+const data = [
     {
         "title": "Alien Scanner",
         "description": "The Alien handheld scanner, or motion tracker, is a fictional device used by the crew to detect the movement of the alien creature. It is a pivotal tool in their attempts to locate and avoid the lethal xenomorph as it stalks them through the spaceship.",
@@ -80,4 +90,16 @@
         "year": "2021",
         "software": "Photoshop"
     }
-]
+    // Add the rest of your project data here...
+];
+
+
+Project.insertMany(data)
+    .then(() => {
+        console.log('Projects added');
+        mongoose.connection.close();
+    })
+    .catch(err => {
+        console.error('Error adding projects', err);
+        mongoose.connection.close();
+    });
