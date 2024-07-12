@@ -7,12 +7,24 @@ import axios from 'axios';
 
 const App = () => {
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://portfolio-11-8t3r.onrender.com/projects') // Ensure this URL matches your Render URL
-      .then(response => setProjects(response.data))
-      .catch(error => console.error('Error fetching data:', error.response ? error.response.data : error.message));
+    axios.get('https://portfolio-12-s2fz.onrender.com/projects')
+      .then(response => {
+        console.log('Fetched Projects:', response.data); // Detailed logging
+        setProjects(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Router>
@@ -26,6 +38,9 @@ const App = () => {
 };
 
 export default App;
+
+
+
 
 
 /*
