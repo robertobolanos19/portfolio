@@ -1,75 +1,44 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const { GridFSBucket } = require('mongodb');
 require('dotenv').config();
 
-const mongoUri = process.env.MONGODB_URI;
+const app = express();
+const port = process.env.PORT || 3001;
 
+// MongoDB connection
+const mongoUri = process.env.MONGODB_URI || 'your_mongo_uri_here';
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Connected to MongoDB');
-    initializeApp();
-  })
+  .then(() => console.log('Connected to MongoDB'))
   .catch(err => {
     console.error('Could not connect to MongoDB...', err);
     process.exit(1); // Exit the application if the connection fails
   });
 
-function initializeApp() {
-  const connection = mongoose.connection;
-  const bucket = new GridFSBucket(connection.db, { bucketName: 'uploads' });
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-  const app = express();
-  const port = process.env.PORT || 3001;
+// Simple Project model
+const projectSchema = new mongoose.Schema({
+  name: String,
+  description: String,
+  // Add other fields as necessary
+});
+const Project = mongoose.model('Project', projectSchema);
 
-  // Use CORS middleware
-  const allowedOrigins = ['http://localhost:3000', 'https://inexplicablejourney.com'];
-  const corsOptions = {
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        console.error('Blocked by CORS:', origin);
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    optionsSuccessStatus: 200,
-  };
-  app.use(cors(corsOptions));
+// Routes
+app.get('/projects', async (req, res) => {
+  try {
+    const projects = await Project.find();
+    res.json(projects);
+  } catch (err) {
+    console.error('Error fetching projects:', err);
+    res.status(500).json({ error: 'Error fetching projects', details: err.message });
+  }
+});
 
-  // Use express.json() for parsing application/json
-  app.use(express.json());
-
-  const Project = require('./models/Project');
-
-  app.get('/projects', async (req, res) => {
-    try {
-      const projects = await Project.find();
-      res.json(projects);
-    } catch (err) {
-      console.error('Error fetching projects:', err); // Log the error
-      res.status(500).json({ error: 'Error fetching projects', details: err.message });
-    }
-  });
-
-  app.get('/file/:filename', (req, res) => {
-    bucket.find({ filename: req.params.filename }).toArray((err, files) => {
-      if (err) {
-        console.error('Error finding file:', err); // Log the error
-        return res.status(500).json({ error: 'Error finding file', details: err.message });
-      }
-      if (!files || files.length === 0) {
-        return res.status(404).json({ error: 'No file exists' });
-      }
-      const readstream = bucket.openDownloadStreamByName(req.params.filename);
-      readstream.pipe(res);
-    });
-  });
-
-  app.listen(port, () => {
-    console.log(`Backend server is running at http://localhost:${port}`);
-  });
-}
-
-module.exports = initializeApp;
+// Start the server
+app.listen(port, () => {
+  console.log(`Backend server is running at http://localhost:${port}`);
+});
