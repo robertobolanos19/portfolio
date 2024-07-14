@@ -63,6 +63,7 @@ async function initializeApp() {
         return res.status(404).json({ error: 'No file exists' });
       }
       const readstream = bucket.openDownloadStreamByName(req.params.filename);
+      res.setHeader('Access-Control-Allow-Origin', '*'); // Explicitly set CORS header
       readstream.pipe(res);
     });
   });
