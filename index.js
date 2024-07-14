@@ -26,10 +26,11 @@ async function initializeApp() {
   // Use CORS middleware
   const allowedOrigins = ['http://localhost:3000', 'https://inexplicablejourney.com'];
   const corsOptions = {
-    origin: (origin, callback) => {
-      if (allowedOrigins.includes(origin) || !origin) {
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
         callback(null, true);
       } else {
+        console.error('Blocked by CORS:', origin);
         callback(new Error('Not allowed by CORS'));
       }
     },
