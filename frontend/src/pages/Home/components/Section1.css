@@ -4,7 +4,6 @@
     background-color: transparent;
     flex-direction: row;
     color: white;
-    background-color: aqua;
 }
 
 .left-content {
@@ -68,6 +67,5 @@
         position: absolute; /* Position the left content in front of the right content */
         align-items: flex-start;
         height: 50%; /* Ensure it takes half of the container height */
-        background-color: red; /* Add some transparency if needed */
     }
 }

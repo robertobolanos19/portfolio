@@ -23,9 +23,9 @@ const ProjectPage = ({ projects }) => {
   return (
     <div className="project-page">
       <Navbar />
+      <Model modelPath={project.model} info={project} />
       <h1>{project.title}</h1>
       <p>{project.description}</p>
-      <Model modelPath={project.model} info={project} />
       <Section1 images={project.image} />
     </div>
   );

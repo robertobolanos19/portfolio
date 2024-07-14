@@ -3,7 +3,7 @@
         "title": "Alien Scanner",
         "description": "The Alien handheld scanner, or motion tracker, is a fictional device used by the crew to detect the movement of the alien creature. It is a pivotal tool in their attempts to locate and avoid the lethal xenomorph as it stalks them through the spaceship.",
         "image": ["/imgs/alienScanner/2.png","/imgs/alienScanner/1.png","/imgs/alienScanner/3.png"],
-        "model": "/models/test.glb",
+        "model": "/models/alienScanner.glb",
         "class": "Exploration",
         "year": "2023",
         "software": "Blender"
@@ -20,8 +20,8 @@
     {
         "title": "Red Barron",
         "description": "The Red Baron, Manfred von Richthofen, was a German fighter pilot and flying ace during World War I, known for his impressive record of 80 confirmed aerial victories. He became a legendary figure in aviation history, earning widespread fame and respect for his skill and bravery in the skies before being shot down in 1918.",
-        "image": ["/imgs/redBarron/2.png","/imgs/slaveOne/1.png","/imgs/slaveOne//3.png"],
-        "model": "/models/test.glb",
+        "image": ["/imgs/redBarron/2.png","/imgs/redBarron/1.png","/imgs/redBarron//3.png"],
+        "model": "/models/redBarron.glb",
         "class": "Product",
         "year": "2023",
         "software": "Blender"

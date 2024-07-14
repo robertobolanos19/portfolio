@@ -11,31 +11,38 @@ const About = () => {
             </div>
             <div className="description">
                 <h1>About me</h1>
-                <p>Lorem ipsum dolor sit amet consectetur. Quam massa magna tortor pulvinar lectus rutrum leo. Dolor mauris purus fringilla id cursus malesuada nunc.</p>
+                <p>Hi, I am Roberto, a Computer Science Student who has experience working in fullstack Development and 3D design, additionally I am Interested in developing immersive experiences utilizing web, Virtual and Augmented Reality technologies. My goal is to continue finding ways to combine 3D and programming to create more engaging user experiences.</p>
             </div>
             <div className="responsive-section">
                 <div className="responsive-div">
-                    <h1>Creative</h1>
+                    <h1>Freelance Work</h1>
                     <ul>
-                        <li>Art Direction</li>
+                        <li>3D modeling</li>
                         <li>UX/UI Design</li>
-                        <li>Visuals</li>
+                        <li>Frontend Development</li>
+                        <li>BackendD Development</li>
                     </ul>
                 </div>
                 <div className="responsive-div">
-                    <h1>Tech</h1>
+                    <h1>3D Softwares/Libraries</h1>
                     <ul>
-                        <li>Art Direction</li>
-                        <li>UX/UI Design</li>
-                        <li>Visuals</li>
+                        <li>Maya</li>
+                        <li>Blender</li>
+                        <li>Unity</li>
+                        <li>Three.js</li>
+                        <li>Babylon.js</li>
                     </ul>
                 </div>
                 <div className="responsive-div">
-                    <h1>Production</h1>
+                    <h1>Programming</h1>
                     <ul>
-                        <li>Art Direction</li>
-                        <li>UX/UI Design</li>
-                        <li>Visuals</li>
+                        <li>React</li>
+                        <li>C++, C#</li>
+                        <li>MongoDb</li>
+                        <li>Node.js</li>
+                        <li>Javascript</li>
+                        <li>HTML/CSS</li>
+
                     </ul>
                 </div>
             </div>

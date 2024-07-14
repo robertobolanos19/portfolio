@@ -21,32 +21,43 @@ async function uploadFiles() {
         { path: './frontend/public/imgs/alienScanner/1.png', filename: 'alienScanner/1.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/alienScanner/2.png', filename: 'alienScanner/2.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/alienScanner/3.png', filename: 'alienScanner/3.png', contentType: 'image/png' },
-        { path: './frontend/public/models/test.glb', filename: 'test.glb', contentType: 'model/gltf-binary' },
+        { path: './frontend/public/models/alienScanner.glb', filename: 'alienScanner.glb', contentType: 'model/gltf-binary' },
+        
         { path: './frontend/public/imgs/slaveOne/2.png', filename: 'slaveOne/2.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/slaveOne/3.png', filename: 'slaveOne/3.png', contentType: 'image/png' },
-        { path: './frontend/public/models/slaveI.glb', filename: 'slaveI.glb', contentType: 'model/gltf-binary' },
-        { path: './frontend/public/imgs/redBarron/2.png', filename: 'redBarron/2.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/slaveOne/1.png', filename: 'slaveOne/1.png', contentType: 'image/png' },
-        { path: './frontend/public/models/test.glb', filename: 'test.glb', contentType: 'model/gltf-binary' },
+        { path: './frontend/public/models/slaveI.glb', filename: 'slaveI.glb', contentType: 'model/gltf-binary' },
+        
+        { path: './frontend/public/imgs/redBarron/2.png', filename: 'redBarron/2.png', contentType: 'image/png' },
+        { path: './frontend/public/imgs/redBarron/1.png', filename: 'redBarron/1.png', contentType: 'image/png' },
+        { path: './frontend/public/imgs/redBarron/3.png', filename: 'redBarron/3.png', contentType: 'image/png' },
+
+        { path: './frontend/public/models/redBarron.glb', filename: 'redBarron.glb', contentType: 'model/gltf-binary' },
+        
         { path: './frontend/public/imgs/cassetTape/1.png', filename: 'cassetTape/1.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/cassetTape/2.png', filename: 'cassetTape/2.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/cassetTape/3.png', filename: 'cassetTape/3.png', contentType: 'image/png' },
         { path: './frontend/public/models/casset.glb', filename: 'casset.glb', contentType: 'model/gltf-binary' },
+        
         { path: './frontend/public/imgs/chess/1.png', filename: 'chess/1.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/chess/2.png', filename: 'chess/2.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/chess/3.png', filename: 'chess/3.png', contentType: 'image/png' },
         { path: './frontend/public/models/chess.glb', filename: 'chess.glb', contentType: 'model/gltf-binary' },
+        
         { path: './frontend/public/imgs/droideka/1.png', filename: 'droideka/1.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/droideka/2.png', filename: 'droideka/2.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/droideka/3.png', filename: 'droideka/3.png', contentType: 'image/png' },
         { path: './frontend/public/models/droideka.glb', filename: 'droideka.glb', contentType: 'model/gltf-binary' },
+        
         { path: './frontend/public/imgs/gundam/1.png', filename: 'gundam/1.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/gundam/2.png', filename: 'gundam/2.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/gundam/3.png', filename: 'gundam/3.png', contentType: 'image/png' },
         { path: './frontend/public/models/gundam.glb', filename: 'gundam.glb', contentType: 'model/gltf-binary' },
+        
         { path: './frontend/public/imgs/mazingerHead/2.png', filename: 'mazingerHead/2.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/mazingerHead/3.png', filename: 'mazingerHead/3.png', contentType: 'image/png' },
         { path: './frontend/public/models/mazingerHead.glb', filename: 'mazingerHead.glb', contentType: 'model/gltf-binary' },
+        
         { path: './frontend/public/imgs/panasonicPortTv/1.png', filename: 'panasonicPortTv/1.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/panasonicPortTv/2.png', filename: 'panasonicPortTv/2.png', contentType: 'image/png' },
         { path: './frontend/public/imgs/panasonicPortTv/3.png', filename: 'panasonicPortTv/3.png', contentType: 'image/png' },

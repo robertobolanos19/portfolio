@@ -57,6 +57,7 @@
     }
 
     .section1 {
+        padding: 0;
         flex-direction: column;
         position: relative;
         height: 600px; /* Set the height to 600px */
@@ -64,10 +65,11 @@
 
     .right-content {
         width: 100%;
-        height: auto; /* Ensure it takes half of the container height */
+        height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0;
     }
 
     .left-content {
