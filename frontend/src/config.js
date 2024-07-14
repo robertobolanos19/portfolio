@@ -2,7 +2,7 @@
 const config = {
   apiUrl: window.location.hostname === 'localhost'
     ? 'http://localhost:3001'
-    : 'https://portfolio-14-q1xj.onrender.com'
+    : 'https://portfolio-15-emde.onrender.com'
 };
 
 export default config;

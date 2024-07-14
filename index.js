@@ -34,6 +34,9 @@ async function initializeApp() {
   };
   app.use(cors(corsOptions));
 
+  // Use express.json() for parsing application/json
+  app.use(express.json());
+
   const Project = require('./models/Project');
 
   app.get('/projects', async (req, res) => {
@@ -41,6 +44,7 @@ async function initializeApp() {
       const projects = await Project.find();
       res.json(projects);
     } catch (err) {
+      console.error('Error fetching projects:', err); // Log the error
       res.status(500).send('Error fetching projects');
     }
   });
