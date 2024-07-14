@@ -6,12 +6,15 @@ require('dotenv').config();
 
 const mongoUri = process.env.MONGODB_URI;
 
-mongoose.connect(mongoUri)
+mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
     initializeApp();
   })
-  .catch(err => console.error('Could not connect to MongoDB...', err));
+  .catch(err => {
+    console.error('Could not connect to MongoDB...', err);
+    process.exit(1); // Exit the application if the connection fails
+  });
 
 async function initializeApp() {
   const connection = mongoose.connection;
@@ -42,17 +45,22 @@ async function initializeApp() {
   app.get('/projects', async (req, res) => {
     try {
       const projects = await Project.find();
+      res.setHeader('Access-Control-Allow-Origin', '*'); // Explicitly set CORS header
       res.json(projects);
     } catch (err) {
       console.error('Error fetching projects:', err); // Log the error
-      res.status(500).send('Error fetching projects');
+      res.status(500).json({ error: 'Error fetching projects', details: err.message });
     }
   });
 
   app.get('/file/:filename', (req, res) => {
     bucket.find({ filename: req.params.filename }).toArray((err, files) => {
+      if (err) {
+        console.error('Error finding file:', err); // Log the error
+        return res.status(500).json({ error: 'Error finding file', details: err.message });
+      }
       if (!files || files.length === 0) {
-        return res.status(404).json({ err: 'No file exists' });
+        return res.status(404).json({ error: 'No file exists' });
       }
       const readstream = bucket.openDownloadStreamByName(req.params.filename);
       readstream.pipe(res);
