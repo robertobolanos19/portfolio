@@ -1,16 +1,20 @@
+// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import ProjectPage from './pages/Project/ProjectPage';
 import axios from 'axios';
+import Loader from './components/Loader/Loader';
+import config from './config';
+
 
 const App = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://portfolio-12-s2fz.onrender.com/projects')
+    axios.get(`${config.apiUrl}/projects`)
       .then(response => {
         console.log('Fetched Projects:', response.data); // Detailed logging
         setProjects(response.data);
@@ -23,7 +27,7 @@ const App = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (
@@ -38,6 +42,7 @@ const App = () => {
 };
 
 export default App;
+
 
 
 

@@ -1,11 +1,10 @@
 .section2 {
-    width: 50%;
+    width: 70%;
     margin: auto;
     height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: transparent;
     padding: 10px 20px; /* Add some padding for better spacing */
     flex-wrap: wrap; /* Allow wrapping for better responsiveness */
 }
@@ -32,6 +31,7 @@
 @media (max-width: 646px) {
     .section2{
         width: 100%;
+        margin-top: 100px;
     }
 
     .section2 button {

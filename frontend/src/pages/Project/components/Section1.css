@@ -3,22 +3,26 @@
     justify-content: center;
     align-items: center;
     padding: 0;
+    margin-bottom: 50px;
 }
 
 .images {
+    margin: auto;
+    width: 78%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around;
 }
 
-.images.image-wrapper {
-    flex: 1 1 30%;
-    max-width: 30%;
+.image-wrapper {
+    margin: auto;
+    width: 30%;
+    justify-content: center;
 }
 
 .image-wrapper img {
     width: 100%;
+    margin: auto;
     height: auto;
     display: block;
     border-radius: 8px;
@@ -26,8 +30,33 @@
 
 /* Media query for responsiveness */
 @media (max-width: 600px) {
+
+    .section1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 50px;
+        height: auto;
+    }
+
+    .images {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+        overflow-x: auto; /* Allows horizontal scrolling if needed */
+    }
+
     .image-wrapper {
-        flex: 1 1 100%;
-        max-width: 100%;
+        flex: 0 0 auto; /* Prevent flex items from shrinking or growing */
+        width: auto; /* Allow images to take their intrinsic width */
+        max-width: none; /* Remove any max-width constraints */
+    }
+
+    .image-wrapper img {
+        width: auto; /* Allow images to take their intrinsic width */
+        max-width: 90vw; /* Ensure images fit within the viewport width */
+        border-radius: 8px;
     }
 }

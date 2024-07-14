@@ -25,7 +25,7 @@ const Home = ({ projects }) => {
 
     const homeInfo = {
         title: "Inexplicable",
-        subTitle: "Creations",
+        subTitle: "Journey",
         description: "Unlock the inexplicable fusion of art and technology with cutting-edge 3D modeling and programming."
     };
 

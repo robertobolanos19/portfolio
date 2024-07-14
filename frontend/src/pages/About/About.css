@@ -8,9 +8,9 @@
     overflow: hidden;
     min-height: auto; /* Ensure the page takes at least the full viewport height */
     background-image: url('/imgs/blocks.png'), url('/imgs/blocks.png'); 
-    background-position: left top, right top;
+    background-position: left 100px,  right 100px;
     background-repeat: no-repeat, no-repeat;
-    background-size: 40%, 40%;
+    background-size: 35%;
 }
 
 .image-container {
@@ -116,6 +116,6 @@
 
     .responsive-div {
         width: 80%;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
     }
 }

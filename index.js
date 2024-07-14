@@ -18,9 +18,20 @@ async function initializeApp() {
   const bucket = new GridFSBucket(connection.db, { bucketName: 'uploads' });
 
   const app = express();
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3001;
 
-  app.use(cors({ origin: 'http://inexplicablejourney.com' }));
+  // Determine the correct origin based on the environment
+  const corsOptions = {
+    origin: (origin, callback) => {
+      if (process.env.NODE_ENV === 'development') {
+        callback(null, 'http://localhost:3000');
+      } else {
+        callback(null, 'https://inexplicablejourney.com');
+      }
+    }
+  };
+
+  app.use(cors(corsOptions));
 
   const Project = require('./models/Project');
 
@@ -29,15 +40,15 @@ async function initializeApp() {
       const projects = await Project.find();
       res.json(projects);
     } catch (err) {
-      console.error('Error fetching projects:', err);
       res.status(500).send('Error fetching projects');
     }
   });
 
   app.get('/file/:filename', (req, res) => {
     bucket.find({ filename: req.params.filename }).toArray((err, files) => {
-      if (files.length === 0) return res.status(404).json({ err: 'No file exists' });
-
+      if (!files || files.length === 0) {
+        return res.status(404).json({ err: 'No file exists' });
+      }
       const readstream = bucket.openDownloadStreamByName(req.params.filename);
       readstream.pipe(res);
     });
