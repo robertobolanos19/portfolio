@@ -24,7 +24,7 @@ async function initializeApp() {
   const port = process.env.PORT || 3001;
 
   // Use CORS middleware
-  const allowedOrigins = ['http://localhost:3001', 'https://inexplicablejourney.com'];
+  const allowedOrigins = ['http://localhost:3000', 'https://inexplicablejourney.com'];
   const corsOptions = {
     origin: (origin, callback) => {
       if (allowedOrigins.includes(origin) || !origin) {

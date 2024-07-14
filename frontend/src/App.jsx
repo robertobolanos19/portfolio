@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
@@ -7,7 +6,6 @@ import ProjectPage from './pages/Project/ProjectPage';
 import axios from 'axios';
 import Loader from './components/Loader/Loader';
 import config from './config';
-
 
 const App = () => {
   const [projects, setProjects] = useState([]);
@@ -42,6 +40,7 @@ const App = () => {
 };
 
 export default App;
+
 
 
 
