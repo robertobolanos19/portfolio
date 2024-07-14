@@ -20,17 +20,18 @@ async function initializeApp() {
   const app = express();
   const port = process.env.PORT || 3001;
 
-  // Determine the correct origin based on the environment
+  // Use CORS middleware
+  const allowedOrigins = ['http://localhost:3000', 'https://inexplicablejourney.com'];
   const corsOptions = {
     origin: (origin, callback) => {
-      if (process.env.NODE_ENV === 'development') {
-        callback(null, 'http://localhost:3000');
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
       } else {
-        callback(null, 'https://inexplicablejourney.com');
+        callback(new Error('Not allowed by CORS'));
       }
-    }
+    },
+    optionsSuccessStatus: 200,
   };
-
   app.use(cors(corsOptions));
 
   const Project = require('./models/Project');
