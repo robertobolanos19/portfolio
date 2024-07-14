@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const mongoUri = process.env.MONGODB_URI;
 
-mongoose.connect(mongoUri)
+mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
     initializeApp();
@@ -16,7 +16,7 @@ mongoose.connect(mongoUri)
     process.exit(1); // Exit the application if the connection fails
   });
 
-async function initializeApp() {
+function initializeApp() {
   const connection = mongoose.connection;
   const bucket = new GridFSBucket(connection.db, { bucketName: 'uploads' });
 
@@ -46,7 +46,6 @@ async function initializeApp() {
   app.get('/projects', async (req, res) => {
     try {
       const projects = await Project.find();
-      res.setHeader('Access-Control-Allow-Origin', '*'); // Explicitly set CORS header
       res.json(projects);
     } catch (err) {
       console.error('Error fetching projects:', err); // Log the error
@@ -64,7 +63,6 @@ async function initializeApp() {
         return res.status(404).json({ error: 'No file exists' });
       }
       const readstream = bucket.openDownloadStreamByName(req.params.filename);
-      res.setHeader('Access-Control-Allow-Origin', '*'); // Explicitly set CORS header
       readstream.pipe(res);
     });
   });
@@ -73,3 +71,5 @@ async function initializeApp() {
     console.log(`Backend server is running at http://localhost:${port}`);
   });
 }
+
+module.exports = initializeApp;
